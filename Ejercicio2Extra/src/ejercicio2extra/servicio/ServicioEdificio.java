@@ -1,17 +1,3 @@
-/* clase edificio oficina
-De esta clase nos interesa saber cuántas personas pueden trabajar en todo el edificio, el
-usuario dirá cuántas personas entran en cada oficina, cuantas oficinas y el número de piso
-(suponiendo que en cada piso hay una oficina). Crear el método cantPersonas(), que muestre
-cuantas personas entrarían en un piso y cuantas en todo el edificio.
-
-16
-Por último, en el main vamos a crear un ArrayList de tipo Edificio. El ArrayList debe contener
-dos polideportivos y dos edificios de oficinas. Luego, recorrer este array y ejecutar los
-métodos calcularSuperficie y calcularVolumen en cada Edificio. Se deberá mostrar la
-superficie y el volumen de cada edificio.
-Además de esto, para la clase Polideportivo nos interesa saber cuántos polideportivos son
-techados y cuantos abiertos. Y para la clase EdificioDeOficinas deberemos llamar al método
-cantPersonas() y mostrar los resultados de cada edificio de oficinas.*/
 package ejercicio2extra.servicio;
 
 import ejercicio2extra.entidades.Edificio;
@@ -31,7 +17,6 @@ public class ServicioEdificio {
     public void crearEdificio(ArrayList<Edificio> x) {
         System.out.println("Que tipo de edificio quiere agregar a la lista\n1-Polideportivo\n2-Edifcio de Oficina");
         String opc = sc.next();
-Edificio edi = null;
         if (opc.equalsIgnoreCase("1")) {
             Polideportivo poli = new Polideportivo();
 
@@ -59,8 +44,7 @@ Edificio edi = null;
             poli.setAncho(Double.parseDouble(sc.next()));
             System.out.println("Ingrese el largo del polideportivo");
             poli.setLargo(Double.parseDouble(sc.next()));
-            edi = poli;
-            x.add(edi);
+            x.add(poli);
 
         } else if(opc.equals("2")){
             EdificioDeOficinas edo = new EdificioDeOficinas();
@@ -75,8 +59,7 @@ Edificio edi = null;
             edo.setAncho(Double.parseDouble(sc.next()));
             System.out.println("Ingrese el largo del edificio");
             edo.setLargo(Double.parseDouble(sc.next()));
-            edi = edo;
-            x.add(edi);
+            x.add(edo);
 
         }else{
             System.out.println("Alto navo sos");}
